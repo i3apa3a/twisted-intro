@@ -27,7 +27,7 @@ for that to work.
     _, addresses = parser.parse_args()
 
     if not addresses:
-        print parser.format_help()
+        print(parser.format_help())
         parser.exit()
 
     def parse_address(addr):
@@ -72,7 +72,7 @@ def get_poetry(address):
 
 def format_address(address):
     host, port = address
-    return '%s:%s' % (host or '127.0.0.1', port)
+    return('%s:%s' % (host or '127.0.0.1', port))
 
 
 def main():
@@ -83,7 +83,7 @@ def main():
     for i, address in enumerate(addresses):
         addr_fmt = format_address(address)
 
-        print 'Task %d: get poetry from: %s' % (i + 1, addr_fmt)
+        print('Task %d: get poetry from: %s' % (i + 1, addr_fmt))
 
         start = datetime.datetime.now()
 
@@ -96,11 +96,11 @@ def main():
         time = datetime.datetime.now() - start
 
         msg = 'Task %d: got %d bytes of poetry from %s in %s'
-        print  msg % (i + 1, len(poem), addr_fmt, time)
+        print(msg % (i + 1, len(poem), addr_fmt, time))
 
         elapsed += time
 
-    print 'Got %d poems in %s' % (len(addresses), elapsed)
+    print('Got %d poems in %s' % (len(addresses), elapsed))
 
 
 if __name__ == '__main__':
